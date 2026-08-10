@@ -67,3 +67,5 @@ Por isso, o Monitor Serial deve estar configurado para **9600 baud**.
 ## ✅ Conclusão
 
 O Monitor Serial é uma ferramenta importante para **testar e acompanhar projetos com Arduino**. Ele permite observar o que está acontecendo no programa em tempo real, facilitando a identificação de problemas e a compreensão do funcionamento do circuito.
+
+https://www.tinkercad.com/things/kOlWoaPi0WE-monitor-serial
