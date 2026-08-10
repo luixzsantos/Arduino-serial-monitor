@@ -1,43 +1,69 @@
-🖥️ Monitor Serial
+# 🖥️ Monitor Serial
 
-O Monitor Serial é uma ferramenta da Arduino IDE que permite visualizar mensagens enviadas pelo Arduino para o computador. Ele é muito útil para testar, acompanhar e identificar possíveis erros no funcionamento do projeto.
+## 📌 O que é?
 
-Para utilizar o Monitor Serial, primeiro é necessário iniciar a comunicação serial no setup():
+O **Monitor Serial** é uma ferramenta da Arduino IDE que permite visualizar as informações enviadas pelo Arduino para o computador.
 
+Ele funciona como uma **tela de comunicação**, mostrando mensagens e valores durante a execução do programa.
+
+## 🎯 Para que serve?
+
+O Monitor Serial pode ser utilizado para:
+
+* 🔎 Acompanhar o funcionamento do projeto;
+* 🧪 Realizar testes;
+* 🐛 Identificar erros no código;
+* 💡 Verificar o estado dos LEDs;
+* 📊 Visualizar valores enviados por sensores;
+* 💬 Mostrar mensagens durante a execução do programa.
+
+## ⚙️ Como funciona?
+
+Para utilizar o Monitor Serial, é necessário iniciar a comunicação serial no código:
+
+```cpp
 Serial.begin(9600);
+```
 
-Depois, podemos enviar informações para o computador usando:
+Depois, podemos enviar uma mensagem para o Monitor Serial utilizando:
 
+```cpp
 Serial.println("LED vermelho ligado");
+```
 
-No projeto da sinaleira, por exemplo, podemos informar qual LED está aceso:
+## 🚦 Exemplo no projeto
 
-void setup() {
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
+Na sinaleira com **LED vermelho e LED branco**, o Arduino pode informar qual LED está ligado:
 
-  Serial.begin(9600);
-}
+```cpp
+Serial.println("LED vermelho ligado");
+```
 
-void loop() {
-  digitalWrite(8, HIGH);
-  digitalWrite(9, LOW);
+E depois:
 
-  Serial.println("LED vermelho ligado");
-  delay(3000);
+```cpp
+Serial.println("LED branco ligado");
+```
 
-  digitalWrite(8, LOW);
-  digitalWrite(9, HIGH);
+No Monitor Serial, será possível visualizar:
 
-  Serial.println("LED branco ligado");
-  delay(3000);
-}
-
-Ao abrir o Monitor Serial e selecionar 9600 baud, aparecerá algo parecido com:
-
+```text
 LED vermelho ligado
 LED branco ligado
 LED vermelho ligado
 LED branco ligado
+```
 
-Isso permite acompanhar em tempo real o que o Arduino está executando.
+## 💻 Velocidade da comunicação
+
+Neste projeto, utilizamos:
+
+```cpp
+Serial.begin(9600);
+```
+
+Por isso, o Monitor Serial deve estar configurado para **9600 baud**.
+
+## ✅ Conclusão
+
+O Monitor Serial é uma ferramenta importante para **testar e acompanhar projetos com Arduino**. Ele permite observar o que está acontecendo no programa em tempo real, facilitando a identificação de problemas e a compreensão do funcionamento do circuito.
